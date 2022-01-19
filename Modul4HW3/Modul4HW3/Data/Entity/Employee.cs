@@ -15,5 +15,7 @@ namespace Modul4HW3.Data.Entity
         public DateTime? DateOfBirth { get; set; }
         public int OfficeId { get; set; }
         public int TitleId { get; set; }
+
+        public Title Title { get; set; }
     }
 }

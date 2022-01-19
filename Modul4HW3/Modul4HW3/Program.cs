@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Modul4HW3.Data;
 using Modul4HW3.Data.Entity;
 using Modul4HW3.Data.EntityConfigurations;
 
@@ -28,11 +29,6 @@ namespace Modul4HW3
 
             using (var db = new ApplicationsDbContext(options))
             {
-                var users = db.Project.ToList();
-                foreach (var item in users)
-                {
-                    Console.WriteLine($"{item.ProjectId} {item.Name}  {item.StartedDate}");
-                }
             }
 
             Console.Read();

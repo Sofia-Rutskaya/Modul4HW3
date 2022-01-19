@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Modul4HW3.Data.Entity;
+using Modul4HW3.Data.EntityConfigurations;
 
-namespace Modul4HW3.Data.EntityConfigurations
+namespace Modul4HW3.Data
 {
     public class ApplicationsDbContext : DbContext
     {
@@ -16,10 +17,13 @@ namespace Modul4HW3.Data.EntityConfigurations
             Database.EnsureCreated();
         }
 
-        public DbSet<Project> Project { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProjectConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new OfficeConfiguration());
+            modelBuilder.ApplyConfiguration(new TitleConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeProjectConfigurations());
         }
     }
 }
