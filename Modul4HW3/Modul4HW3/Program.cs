@@ -31,6 +31,7 @@ namespace Modul4HW3
             {
             }
 
+            Console.WriteLine("Done!");
             Console.Read();
         }
     }

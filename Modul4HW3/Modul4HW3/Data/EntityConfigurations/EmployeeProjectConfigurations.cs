@@ -19,6 +19,16 @@ namespace Modul4HW3.Data.EntityConfigurations
             builder.Property(p => p.StartedDate).IsRequired().HasMaxLength(27).HasColumnType("datetime");
             builder.Property(p => p.EmployeeId).IsRequired();
             builder.Property(p => p.ProjectId).IsRequired();
+
+            builder.HasOne(d => d.Employee)
+                .WithMany(p => p.EmployeeProjects)
+                .HasForeignKey(d => d.EmployeeProjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(d => d.Project)
+                .WithMany(p => p.EmployeeProjects)
+                .HasForeignKey(d => d.EmployeeProjectId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

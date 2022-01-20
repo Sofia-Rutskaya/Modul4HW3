@@ -26,6 +26,11 @@ namespace Modul4HW3.Data.EntityConfigurations
                 .WithMany(p => p.Employees)
                 .HasForeignKey(d => d.TitleId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(d => d.Office)
+                .WithMany(p => p.Employees)
+                .HasForeignKey(d => d.OfficeId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

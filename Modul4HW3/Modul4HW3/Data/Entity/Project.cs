@@ -12,5 +12,6 @@ namespace Modul4HW3.Data.Entity
         public string Name { get; set; }
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
+        public List<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
     }
 }
