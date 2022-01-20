@@ -22,12 +22,12 @@ namespace Modul4HW3.Data.EntityConfigurations
 
             builder.HasOne(d => d.Employee)
                 .WithMany(p => p.EmployeeProjects)
-                .HasForeignKey(d => d.EmployeeProjectId)
+                .HasForeignKey(d => d.EmployeeId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(d => d.Project)
                 .WithMany(p => p.EmployeeProjects)
-                .HasForeignKey(d => d.EmployeeProjectId)
+                .HasForeignKey(d => d.ProjectId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
