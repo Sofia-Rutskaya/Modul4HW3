@@ -17,20 +17,6 @@ namespace Modul4HW3
     {
         public static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("appsettings.json");
-
-            var config = builder.Build();
-            var connectionString = config.GetConnectionString("DefaultConnection");
-
-            var optionBuilder = new DbContextOptionsBuilder<ApplicationsDbContext>();
-            var options = optionBuilder.UseSqlServer(connectionString).Options;
-
-            using (var db = new ApplicationsDbContext(options))
-            {
-            }
-
             Console.WriteLine("Done!");
             Console.Read();
         }

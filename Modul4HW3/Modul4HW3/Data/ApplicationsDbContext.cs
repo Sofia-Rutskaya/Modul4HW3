@@ -14,7 +14,6 @@ namespace Modul4HW3.Data
         public ApplicationsDbContext(DbContextOptions<ApplicationsDbContext> context)
             : base(context)
         {
-            Database.EnsureCreated();
         }
 
         public DbSet<Employee> Employees { get; set; }
@@ -22,6 +21,7 @@ namespace Modul4HW3.Data
         public DbSet<Office> Offices { get; set; }
         public DbSet<EmployeeProject> EmployeeProjects { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,7 @@ namespace Modul4HW3.Data
             modelBuilder.ApplyConfiguration(new OfficeConfiguration());
             modelBuilder.ApplyConfiguration(new TitleConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeProjectConfigurations());
+            modelBuilder.ApplyConfiguration(new ClientConfigurations());
         }
     }
 }
