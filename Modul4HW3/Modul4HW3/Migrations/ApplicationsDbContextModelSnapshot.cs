@@ -219,6 +219,48 @@ namespace Modul4HW3.Migrations
                     b.HasIndex("ClientId");
 
                     b.ToTable("Project");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectId = 1,
+                            Budget = 2314m,
+                            ClientId = 1,
+                            Name = "Project1",
+                            StartedDate = new DateTime(1998, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            ProjectId = 2,
+                            Budget = 1365135m,
+                            ClientId = 2,
+                            Name = "Project2",
+                            StartedDate = new DateTime(2011, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            ProjectId = 3,
+                            Budget = 23515m,
+                            ClientId = 1,
+                            Name = "Project3",
+                            StartedDate = new DateTime(2018, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            ProjectId = 4,
+                            Budget = 135316m,
+                            ClientId = 3,
+                            Name = "Project4",
+                            StartedDate = new DateTime(2021, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            ProjectId = 5,
+                            Budget = 1363153m,
+                            ClientId = 4,
+                            Name = "Project5",
+                            StartedDate = new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Modul4HW3.Data.Entity.Title", b =>

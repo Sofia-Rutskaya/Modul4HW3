@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Modul4HW3.Migrations
 {
@@ -42,6 +43,18 @@ namespace Modul4HW3.Migrations
                     { 6, "srjuwyy@gmail.com", "Yacno", "Ugosgs", 323575 }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Project",
+                columns: new[] { "ProjectId", "Budget", "ClientId", "Name", "StartedDate" },
+                values: new object[,]
+                {
+                    { 1, 2314m, 1, "Project1", new DateTime(1998, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, 23515m, 1, "Project3", new DateTime(2018, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, 1365135m, 2, "Project2", new DateTime(2011, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, 135316m, 3, "Project4", new DateTime(2021, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, 1363153m, 4, "Project5", new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Project_ClientId",
                 table: "Project",
@@ -68,6 +81,31 @@ namespace Modul4HW3.Migrations
             migrationBuilder.DropIndex(
                 name: "IX_Project_ClientId",
                 table: "Project");
+
+            migrationBuilder.DeleteData(
+                table: "Project",
+                keyColumn: "ProjectId",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "Project",
+                keyColumn: "ProjectId",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "Project",
+                keyColumn: "ProjectId",
+                keyValue: 3);
+
+            migrationBuilder.DeleteData(
+                table: "Project",
+                keyColumn: "ProjectId",
+                keyValue: 4);
+
+            migrationBuilder.DeleteData(
+                table: "Project",
+                keyColumn: "ProjectId",
+                keyValue: 5);
 
             migrationBuilder.DropColumn(
                 name: "ClientId",

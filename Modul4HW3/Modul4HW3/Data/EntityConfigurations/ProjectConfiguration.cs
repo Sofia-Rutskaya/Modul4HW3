@@ -24,14 +24,14 @@ namespace Modul4HW3.Data.EntityConfigurations
                .HasForeignKey(d => d.ClientId)
                .OnDelete(DeleteBehavior.Cascade);
 
-            // builder.HasData(new List<Project>()
-            // {
-            //    new Project { ProjectId = 1, Name = "Project1", Budget = 2314, StartedDate = new DateTime(1998, 09, 04) },
-            //    new Project { ProjectId = 2, Name = "Project2", Budget = 1365135, StartedDate = new DateTime(2011, 10, 04) },
-            //    new Project { ProjectId = 3, Name = "Project3", Budget = 23515, StartedDate = new DateTime(2018, 12, 09) },
-            //    new Project { ProjectId = 4, Name = "Project4", Budget = 135316, StartedDate = new DateTime(2021, 06, 12) },
-            //    new Project { ProjectId = 5, Name = "Project5", Budget = 1363153, StartedDate = new DateTime(2019, 04, 15) }
-            // });
+            builder.HasData(new List<Project>()
+             {
+                new Project { ProjectId = 1, Name = "Project1", Budget = 2314, StartedDate = new DateTime(1998, 09, 04), ClientId = 1 },
+                new Project { ProjectId = 2, Name = "Project2", Budget = 1365135, StartedDate = new DateTime(2011, 10, 04), ClientId = 2 },
+                new Project { ProjectId = 3, Name = "Project3", Budget = 23515, StartedDate = new DateTime(2018, 12, 09), ClientId = 1 },
+                new Project { ProjectId = 4, Name = "Project4", Budget = 135316, StartedDate = new DateTime(2021, 06, 12), ClientId = 3 },
+                new Project { ProjectId = 5, Name = "Project5", Budget = 1363153, StartedDate = new DateTime(2019, 04, 15), ClientId = 4 }
+             });
         }
     }
 }
