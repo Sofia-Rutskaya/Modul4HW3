@@ -10,7 +10,7 @@ using Modul4HW3.Data;
 namespace Modul4HW3.Migrations
 {
     [DbContext(typeof(ApplicationsDbContext))]
-    [Migration("20220124091445_CreateTableClient")]
+    [Migration("20220126205853_CreateTableClient")]
     partial class CreateTableClient
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
